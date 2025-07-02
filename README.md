@@ -9,6 +9,8 @@ I modified the `osc` formula in homebrew-core to make it load OBS service from `
 
 While those formulae can be installed, OBS service typically depends on `obs-build` for some scripts, however because macOS by default use case-insensitive file system, it cannot be extracted and installed (<https://github.com/openSUSE/obs-build/issues/1082>), so `obs-build` is not listed as a dependencies in formulae and they may not run. I don't suggest you to reformat your macOS file system to make it case-sensitive, it will break some (Adobe) apps.
 
+Many scripts assume they are using GNU version of coreutils/findutils/[Insert more binaries here:] and don't support the BSD version provided by macOS, so you need to install GNU version with Homebrew and correctly set your PATH to use them.
+
 Tests are not implemented in those formulae because they require extra dependencies, and I don't have time to gather all dependencies. I'll be very grateful if you can help.
 
 Don't install those formulae on Linux with Homebrew! You should use your Linux distro's package manager, I won't try to make them work with Homebrew on Linux.
