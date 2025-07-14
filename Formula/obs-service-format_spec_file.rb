@@ -9,6 +9,7 @@ class ObsServiceFormatSpecFile < Formula
   uses_from_macos "perl"
 
   def install
+    inreplace "format_spec_file", "/usr/lib/obs/service", "#{HOMEBREW_PREFIX}/lib/obs/service"
     system "make", "prefix=#{prefix}", "install"
   end
 

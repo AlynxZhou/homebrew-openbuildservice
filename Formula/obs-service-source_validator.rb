@@ -101,6 +101,15 @@ class ObsServiceSourceValidator < Formula
       end
     end
 
+    inreplace "source_validator", "/usr/lib/obs/service", "#{HOMEBREW_PREFIX}/lib/obs/service"
+    inreplace "30-patches-applied", "/usr/lib/obs/service", "#{HOMEBREW_PREFIX}/lib/obs/service"
+    inreplace "40-sequence-changes", "/usr/lib/obs/service", "#{HOMEBREW_PREFIX}/lib/obs/service"
+    inreplace "45-stale-changes", "/usr/lib/obs/service", "#{HOMEBREW_PREFIX}/lib/obs/service"
+    inreplace "50-spec-version", "/usr/lib/obs/service", "#{HOMEBREW_PREFIX}/lib/obs/service"
+    inreplace "60-spec-filelist", "/usr/lib/obs/service", "#{HOMEBREW_PREFIX}/lib/obs/service"
+    inreplace "70-baselibs", "/usr/lib/obs/service", "#{HOMEBREW_PREFIX}/lib/obs/service"
+    inreplace "helpers/check_debian_source_changes", "/usr/lib/obs/service", "#{HOMEBREW_PREFIX}/lib/obs/service"
+    inreplace "helpers/fix_changelog", "/usr/lib/obs/service", "#{HOMEBREW_PREFIX}/lib/obs/service"
     system "make", "prefix=#{prefix}", "install"
   end
 
